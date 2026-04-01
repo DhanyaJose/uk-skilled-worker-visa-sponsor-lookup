@@ -9,113 +9,198 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #f5f7fa;
-            color: #1a1a2e;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
             min-height: 100vh;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
-            padding: 60px 20px 40px;
+            padding: 80px 20px 40px;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .hero .icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
         }
 
         h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 8px;
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
         }
 
         .subtitle {
-            text-align: center;
-            color: #6b7280;
-            margin-bottom: 32px;
-            font-size: 0.95rem;
+            color: #94a3b8;
+            font-size: 1.05rem;
         }
 
         .search-box {
             position: relative;
-            margin-bottom: 24px;
+            margin-bottom: 32px;
         }
 
         .search-box input {
             width: 100%;
-            padding: 16px 20px;
+            padding: 18px 24px 18px 52px;
             font-size: 1.05rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            background: #fff;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            background: #1e293b;
+            color: #e2e8f0;
             outline: none;
-            transition: border-color 0.2s;
+            transition: all 0.3s;
         }
 
+        .search-box input::placeholder { color: #64748b; }
+
         .search-box input:focus {
-            border-color: #3b82f6;
+            border-color: #60a5fa;
+            box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+            font-size: 1.2rem;
         }
 
         .status {
             text-align: center;
-            color: #6b7280;
-            padding: 16px;
-            font-size: 0.9rem;
+            color: #64748b;
+            padding: 20px;
+            font-size: 0.95rem;
         }
 
-        .status.loading { color: #3b82f6; }
+        .status.loading { color: #60a5fa; }
 
         .result-count {
             font-size: 0.85rem;
-            color: #6b7280;
+            color: #94a3b8;
+            margin-bottom: 16px;
+            padding-left: 4px;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 14px;
+            padding: 20px 24px;
+            transition: all 0.2s;
+        }
+
+        .card:hover {
+            border-color: #475569;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
             margin-bottom: 12px;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-        }
-
-        thead th {
-            background: #1e293b;
-            color: #fff;
-            padding: 12px 16px;
-            text-align: left;
-            font-size: 0.85rem;
+        .card-name {
+            font-size: 1.05rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
+            color: #f1f5f9;
         }
 
-        tbody td {
-            padding: 12px 16px;
-            border-bottom: 1px solid #f1f5f9;
-            font-size: 0.9rem;
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
         }
 
-        tbody tr:hover { background: #f8fafc; }
+        .badge-a { background: rgba(34, 197, 94, 0.15); color: #4ade80; }
+        .badge-b { background: rgba(251, 191, 36, 0.15); color: #fbbf24; }
+        .badge-other { background: rgba(148, 163, 184, 0.15); color: #94a3b8; }
 
-        tbody tr:last-child td { border-bottom: none; }
+        .card-details {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .detail {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        .detail-icon { font-size: 0.9rem; }
 
         .no-results {
             text-align: center;
-            padding: 40px 20px;
-            color: #9ca3af;
+            padding: 60px 20px;
+            color: #475569;
         }
+
+        .no-results .icon { font-size: 2.5rem; margin-bottom: 12px; }
+
+        .footer {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid #1e293b;
+            font-size: 0.8rem;
+            color: #475569;
+        }
+
+        .footer a { color: #60a5fa; text-decoration: none; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card { animation: fadeIn 0.3s ease forwards; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>UK Skilled Worker Visa Sponsor Lookup</h1>
-        <p class="subtitle">Check if a company is a licensed UK visa sponsor</p>
+        <div class="hero">
+            <div class="icon">&#x1F1EC;&#x1F1E7;</div>
+            <h1>UK Visa Sponsor Lookup</h1>
+            <p class="subtitle">Search 140,000+ licensed sponsor organisations</p>
+        </div>
 
         <div class="search-box">
+            <span class="search-icon">&#128269;</span>
             <input type="text" id="search" placeholder="Search for a company (3+ characters)..." autocomplete="off" autofocus>
         </div>
 
         <div id="output"></div>
+
+        <div class="footer">
+            <p>This is a personal project built for fun and is not affiliated with or endorsed by the UK Government.</p>
+            <p style="margin-top: 8px;">Data from the <a href="https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers">UK Home Office Register of Licensed Sponsors</a>. For official information, please visit <a href="https://www.gov.uk">GOV.UK</a>.</p>
+        </div>
     </div>
 
     <script>
@@ -126,14 +211,11 @@
         input.addEventListener('input', () => {
             clearTimeout(timer);
             const q = input.value.trim();
-
             if (q.length < 3) {
                 output.innerHTML = '<p class="status">Type at least 3 characters to search</p>';
                 return;
             }
-
             output.innerHTML = '<p class="status loading">Searching...</p>';
-
             timer = setTimeout(() => {
                 fetch(`/api/search?q=${encodeURIComponent(q)}`)
                     .then(r => r.json())
@@ -144,9 +226,17 @@
             }, 300);
         });
 
+        function getBadgeClass(rating) {
+            if (!rating) return 'badge-other';
+            const r = rating.toLowerCase();
+            if (r.includes('a rating')) return 'badge-a';
+            if (r.includes('b rating')) return 'badge-b';
+            return 'badge-other';
+        }
+
         function render({ results, total }) {
             if (total === 0) {
-                output.innerHTML = '<div class="no-results">No sponsors found matching your search</div>';
+                output.innerHTML = '<div class="no-results"><div class="icon">&#128533;</div><p>No sponsors found matching your search</p></div>';
                 return;
             }
 
@@ -154,29 +244,20 @@
                 ? `Showing 50 of ${total.toLocaleString()} matches`
                 : `${total} match${total === 1 ? '' : 'es'} found`;
 
-            const rows = results.map(r => `
-                <tr>
-                    <td>${esc(r['Organisation Name'])}</td>
-                    <td>${esc(r['Town/City'])}</td>
-                    <td>${esc(r['Type & Rating'])}</td>
-                    <td>${esc(r['Route'])}</td>
-                </tr>
+            const cards = results.map((r, i) => `
+                <div class="card" style="animation-delay: ${i * 0.04}s">
+                    <div class="card-header">
+                        <span class="card-name">${esc(r['Organisation Name'])}</span>
+                        <span class="badge ${getBadgeClass(r['Type & Rating'])}">${esc(r['Type & Rating'])}</span>
+                    </div>
+                    <div class="card-details">
+                        <span class="detail"><span class="detail-icon">&#128205;</span> ${esc(r['Town/City']) || 'N/A'}</span>
+                        <span class="detail"><span class="detail-icon">&#128196;</span> ${esc(r['Route'])}</span>
+                    </div>
+                </div>
             `).join('');
 
-            output.innerHTML = `
-                <p class="result-count">${countText}</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Organisation Name</th>
-                            <th>Town/City</th>
-                            <th>Type & Rating</th>
-                            <th>Route</th>
-                        </tr>
-                    </thead>
-                    <tbody>${rows}</tbody>
-                </table>
-            `;
+            output.innerHTML = `<p class="result-count">${countText}</p><div class="cards">${cards}</div>`;
         }
 
         function esc(str) {
@@ -185,7 +266,6 @@
             return d.innerHTML;
         }
 
-        // Show initial hint
         output.innerHTML = '<p class="status">Type at least 3 characters to search</p>';
     </script>
 </body>
