@@ -12,7 +12,7 @@ A local web app to check if a UK company is a licensed visa sponsor. Search 140,
 1. **Clone or download this folder**, then navigate into it:
 
    ```bash
-   cd uk_skilled_worker_visa_sponsorship
+   cd uk_skilled_worker_visa_sponsorship_lookup
    ```
 
 2. **Download the CSV** from the [Register of Licensed Sponsors](https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers) and rename it to `sponsors.csv`:
@@ -36,12 +36,12 @@ A local web app to check if a UK company is a licensed visa sponsor. Search 140,
 5. **Open your browser** and go to:
 
    ```
-   http://127.0.0.1:5000
+   http://127.0.0.1:8080
    ```
 
 ## Usage
 
-Type a company name into the search box. Results appear live after 3 or more characters. The search is case-insensitive and matches any part of the company name.
+Type a company name into the search box. Results appear live after 3 or more characters. The search is case-insensitive and matches any part of the company name. Up to 50 results are shown at a time; narrow your search if you hit the cap.
 
 ## Data Source
 
